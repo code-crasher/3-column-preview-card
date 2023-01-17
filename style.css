@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+
+:root{
+    --clr-background:hsl(0,0%,95%);
+    --clr-background-100: hsl(31, 77%, 52%);
+    --clr-background-200: hsl(184, 100%, 22%);
+    --clr-background-300: hsl(179, 100%, 13%);
+    --clr-paragraph: hsla(0, 0%, 100%, 0.75);
+    
+
+    --fs-base:15px;
+
+}
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+}
+body{
+    background:var(--clr-background);
+    font-size: var(--fs-base);
+    line-height:1.2;
+    height:100vh;
+    font-family: 'Lexend Deca', sans-serif;
+
+}
+h1{
+    font-family: 'Big Shoulders Display', cursive;
+    font-weight: 700;
+    color: var(--clr-background);
+    margin-top: 0.75rem;
+}
+p{
+    font-weight:400;
+    color:var(--clr-paragraph);
+    margin-top: 0.5rem;
+}
+.card__container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.card__content{
+    width:80%;
+}
+.card__content .card:nth-child(1){
+    background:var(--clr-background-100);
+}
+.card__content .card:nth-child(2){
+    background: var(--clr-background-200);
+}
+.card__content .card:nth-child(3){
+    background: var(--clr-background-300);
+}
+.card{
+    height:275px;
+    padding:1rem 3rem;
+}
+button{
+    margin-top:2.5rem;
+    padding:0.5rem 0.75rem;
+    border-radius:50vmax;
+    font-weight:700;
+    border:none;
+    outline:none;
+    cursor:pointer;
+}
+.card:nth-child(1) button{
+    color:var(--clr-background-100);
+}
+.card:nth-child(2) button{
+    color:var(--clr-background-200);
+}
+.card:nth-child(3) button{
+    color:var(--clr-background-300);
+}
+.card:nth-child(1) button:hover,
+.card:nth-child(2) button:hover,
+.card:nth-child(3) button:hover,
+.card:nth-child(1) button:focus,
+.card:nth-child(2) button:focus,
+.card:nth-child(3) button:focus{
+    background:transparent;
+    color:#fff;
+    border:1px solid var(--clr-paragraph);
+}
+@media(min-width:600px){
+    .card__container{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+    }
+    .card__content{
+        width:750px;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        border-radius:10px;
+        overflow:hidden;
+    }
+    .card{
+        width: 250px;
+        height:auto;
+    }
+}
